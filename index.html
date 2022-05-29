@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<style type="text/css">
+*{margin: 0px; padding: 0px; box-sizing: border-box; font-family: sans-serif; font-weight: bold;}
+body {background: #f0f0f0; box-shadow: 0 0 20px #f0f0f0;}
+.nav-profile {position: relative; width: 286px; height:80px; background:#3b8bed; box-shadow: 0 0 20px #3b8bed; display: flex; align-items: center; margin-top: 10px; border-radius: 0px 7px 7px 0px;}
+.nav-profile label {position: relative;  display:flex; align-items: center; color: white; text-shadow: 0 0 2px white; margin-left: 6px; cursor: pointer;}
+.nav-profile div {position: relative; left: 9px;}
+.nav-profile label img {width: 60px; height: 60px; border-radius: 50%; box-shadow: 0 0 8px white;}
+
+
+nav {width: 286px; height:auto; background:#3b8bed; box-shadow: 0 0 20px #3b8bed; margin-top: 14px; border-radius: 0px 2px 2px 0px; }
+.nav-menü {position: relative; width: 100%; height:auto; }
+.nav-menü li{ position: relative; color: white; text-shadow: 0 0 2px white; list-style: none; display: flex; align-items: center; height:77px; margin-bottom: 6px; cursor: pointer;}
+.nav-menü li:hover,.nav-menü li.active {background-color: white; box-shadow:0 0 12px white;}
+.nav-menü li.active h4, .nav-menü li:hover h4 {color:#3b8bed; text-shadow: 0 0 2px #3b8bed;}
+.nav-menü li.active ion-icon, .nav-menü li:hover ion-icon {color:#3b8bed; text-shadow: 0 0 2px #3b8bed;}
+.nav-menü li ion-icon {font-size: 41px; position: relative; left: 11px;}
+.nav-menü li h4 {position: relative; color: white; left:35px; font-size: 17px;}
+.nav-menü li span {position: absolute; left:0.5px; width:5px; height:50px; background:#3b8bed; box-shadow: 0 0 5px #3b8bed; display: none;}
+.nav-menü li.active span, .nav-menü li:hover span {display: block;}
+</style>
+</head>
+<body>
+
+
+ <div class="nav-profile">
+     
+ </div>
+
+
+<nav>
+   <div class="nav-menü">
+     
+   </div>
+</nav>
+
+
+<script type="text/javascript">
+
+const navProfile = [
+     {img:'<img src="https://media-exp1.licdn.com/dms/image/C4E03AQGYTfDVuTekdw/profile-displayphoto-shrink_100_100/0/1646331015779?e=1659571200&v=beta&t=LrWhhfl1U3BDSpjdvHChFt6fyTccwNhGXz9obxBcs_4">',
+                     name:'KAAN ŞAHİN',      ünvan:'WEP DEVELOPER' }
+]
+ navProfile.forEach((item) =>{
+   const navprofile = document.querySelector('.nav-profile');
+   navprofile.innerHTML += '<label>'+item.img+ '<div>' + '<h4>'  +item.name+ '</h4>' + '<h5>'+item.ünvan+'</h5>'+'</div>' + '</label>'
+ })
+
+
+
+
+  const navMenü = [
+    {icon:'<ion-icon name="home-outline"></ion-icon>', menü:'DASHBOARD', borderright:''},
+    {icon:'<ion-icon name="people-outline"></ion-icon>', menü:'CUSTOMERS' , borderright:''},
+    {icon:'<ion-icon name="chatbox-ellipses-outline"></ion-icon>', menü:'MESSAGE' , borderright:''},
+    {icon:'<ion-icon name="notifications-outline"></ion-icon>', menü:'NOTİFİCATİONS' , borderright:''},
+    {icon:'<ion-icon name="settings-outline"></ion-icon>', menü:'SETTİNGS' , borderright:''},
+    {icon:'<ion-icon name="lock-closed-outline"></ion-icon>',menü:'PASSWORD' , borderright:''},
+    {icon:'<ion-icon name="log-out-outline"></ion-icon>', menü:'SİGN OUT' , borderright:''}
+  ]
+ const navmenü  = document.querySelector('.nav-menü');
+ navMenü.forEach((item) => {
+   navmenü.innerHTML += '<li class="navmenü-li">'+ '<label>'+item.icon+'</label>' + '<h4>'+item.menü+'</h4>'+ '<span>'+item.borderright+'</span>' + '</li>';
+   
+  
+   
+ })
+
+
+
+
+
+
+const navmenüli = document.querySelectorAll('.navmenü-li');
+function activeLink(){
+  navmenüli.forEach((item) =>
+  item.classList.remove('active'));
+  this.classList.add('active');
+}
+navmenüli.forEach((item) =>
+item.addEventListener('click',activeLink));
+
+
+  
+
+</script>
+</body>
+</html>
